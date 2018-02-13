@@ -1,6 +1,5 @@
 import React, { Component, Fragment } from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import './App.css';
 import Fullscreen from 'react-full-screen';
 
 import Track1 from './Track1';
