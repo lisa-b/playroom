@@ -49,6 +49,8 @@ class App extends Component {
 		if (event.key === 'a') {
 			this.setState(state => ({
 				activeTrack: ++state.activeTrack % videos.length,
+				activeOverlay: 0,
+				overlayPlaying: false,
 			}));
 		} else if (event.key === 's') {
 			this.setState(state => ({
