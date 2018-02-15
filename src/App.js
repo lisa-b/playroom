@@ -4,7 +4,6 @@ import Fullscreen from 'react-full-screen';
 
 import Track1 from './Track1';
 import Track2 from './Track2';
-import Navigation from './Navigation';
 
 class App extends Component {
 	state = { isFull: false };
