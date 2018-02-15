@@ -1,16 +1,58 @@
-import React, { Component, Fragment } from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import React, { Component } from 'react';
 import Fullscreen from 'react-full-screen';
 
-import Track1 from './Track1';
-import Track2 from './Track2';
+import Track from './Track';
+
+// import films
+import MartinBakgrund from './videos/MartinBakgrund.mp4';
+import MartinGris from './videos/MartinGris.mp4';
+import MartinTraktor from './videos/MartinTraktor.mp4';
+
+//structure of videos
+const videos = [
+	{ baseVideo: MartinBakgrund, overlayVideos: [MartinGris, MartinTraktor] },
+];
 
 class App extends Component {
-	state = { isFull: false };
+	//initiate App state
+	state = {
+		isFull: false,
+		activeTrack: 0,
+		activeOverlay: -1,
+		overlayPlaying: false,
+	};
 
+	componentDidMount() {
+		document.addEventListener('keydown', this.handleKeyDown);
+	}
+
+	componentWillUnmount() {
+		document.removeEventListener('keydown', this.handleKeyDown);
+	}
+
+	//go to fullscreen function
 	goFull = () => {
 		this.setState({ isFull: true });
 	};
+
+	handleKeyDown = event => {
+		if (event.key === 'a') {
+			this.setState(state => ({
+				activeTrack: ++state.activeTrack % videos.length,
+			}));
+		} else if (event.key === 's') {
+			this.setState(state => ({
+				activeOverlay:
+					++state.activeOverlay %
+					videos[state.activeTrack].overlayVideos.length,
+				overlayPlaying: true,
+			}));
+		} else if (event.key === 'f') {
+			this.goFull();
+		}
+	};
+
+	handleOverlayEnded = overlay => this.setState({ overlayPlaying: false });
 
 	render() {
 		return (
@@ -18,15 +60,18 @@ class App extends Component {
 				enabled={this.state.isFull}
 				onChange={isFull => this.setState({ isFull })}
 			>
-				<Router>
-					<Fragment>
-						<Route path="/" exact component={Navigation} />
-						<Route path="/Track1" component={Track1} />
-						<Route path="/Track2" component={Track2} />
-
-						<button onClick={this.goFull}>Fullskärm</button>
-					</Fragment>
-				</Router>
+				{/*create track components for each video-enviroments*/}
+				{videos.map((video, index) => (
+					<Track
+						key={index}
+						active={this.state.activeTrack === index}
+						baseVideo={video.baseVideo}
+						overlayVideos={video.overlayVideos}
+						activeOverlay={this.state.activeOverlay}
+						overlayPlaying={this.state.overlayPlaying}
+						handleOverlayEnded={this.handleOverlayEnded}
+					/>
+				))}
 			</Fullscreen>
 		);
 	}
