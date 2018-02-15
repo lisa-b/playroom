@@ -1,5 +1,11 @@
 # Get going
 
+## Clone the repository
+
+```
+git clone https://github.com/lisa-b/playroom.git
+```
+
 ## Prerequisites
 
 Using for example [Homebrew](https://brew.sh/) on macOS:
@@ -19,4 +25,10 @@ yarn install
 
 ```
 yarn dev
+```
+
+## Getting changes to project
+
+```
+git pull
 ```
