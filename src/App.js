@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Fullscreen from 'react-full-screen';
+import { injectGlobal } from 'styled-components';
 
 import Track from './Track';
 
@@ -23,6 +24,15 @@ class App extends Component {
 	};
 
 	componentDidMount() {
+		injectGlobal`
+			body {
+				margin: 0;
+				height: 100vh;
+				width: 100vw;
+				color: black;
+			}
+		`;
+
 		document.addEventListener('keydown', this.handleKeyDown);
 	}
 
