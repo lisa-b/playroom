@@ -9,9 +9,32 @@ import MartinBakgrund from './videos/MartinBakgrund.mp4';
 import MartinGris from './videos/MartinGris.mp4';
 import MartinTraktor from './videos/MartinTraktor.mp4';
 
+import theScen from './videos/scen/the-scen.mp4';
+import scenDance11 from './videos/scen/scen-dance1_1.mp4';
+import scenDance12 from './videos/scen/scen-dance1_2.mp4';
+import scenDance13 from './videos/scen/scen-dance1_3.mp4';
+import scenPlay11 from './videos/scen/scen-play1_1.mp4';
+import scenPlay12 from './videos/scen/scen-play1_2.mp4';
+import scenPlay13 from './videos/scen/scen-play1_3.mp4';
+
 //structure of videos
-const videos = [
-	{ baseVideo: MartinBakgrund, overlayVideos: [MartinGris, MartinTraktor] },
+const tracks = [
+	[
+		{ src: MartinBakgrund, loop: true },
+		{ src: MartinGris, loop: false },
+		{ src: MartinBakgrund, loop: true },
+		{ src: MartinTraktor, loop: false },
+	],
+	[
+		{ src: theScen, loop: true },
+		{ src: scenDance11, loop: false },
+		{ src: scenDance12, loop: true },
+		{ src: scenDance13, loop: false },
+		{ src: theScen, loop: true },
+		{ src: scenPlay11, loop: false },
+		{ src: scenPlay12, loop: true },
+		{ src: scenPlay13, loop: false },
+	],
 ];
 
 class App extends Component {
@@ -19,8 +42,7 @@ class App extends Component {
 	state = {
 		isFull: false,
 		activeTrack: 0,
-		activeOverlay: -1,
-		overlayPlaying: false,
+		activeVideo: 0,
 	};
 
 	componentDidMount() {
@@ -48,40 +70,35 @@ class App extends Component {
 	handleKeyDown = event => {
 		if (event.key === 'a') {
 			this.setState(state => ({
-				activeTrack: ++state.activeTrack % videos.length,
-				activeOverlay: 0,
-				overlayPlaying: false,
+				activeTrack: ++state.activeTrack % tracks.length,
+				activeVideo: 0,
 			}));
 		} else if (event.key === 's') {
-			this.setState(state => ({
-				activeOverlay:
-					++state.activeOverlay %
-					videos[state.activeTrack].overlayVideos.length,
-				overlayPlaying: true,
-			}));
+			this.nextVideo();
 		} else if (event.key === 'f') {
 			this.goFull();
 		}
 	};
 
-	handleOverlayEnded = overlay => this.setState({ overlayPlaying: false });
+	// Play next video when video ends (looped videos will never end and call this)
+	handleVideoEnded = () => this.nextVideo();
+
+	nextVideo = () =>
+		this.setState(state => ({
+			activeVideo: ++state.activeVideo % tracks[state.activeTrack].length,
+		}));
 
 	render() {
 		return (
-			<Fullscreen
-				enabled={this.state.isFull}
-				onChange={isFull => this.setState({ isFull })}
-			>
+			<Fullscreen enabled={this.state.isFull} onChange={isFull => this.setState({ isFull })}>
 				{/*create track components for each video-enviroments*/}
-				{videos.map((video, index) => (
+				{tracks.map((videos, index) => (
 					<Track
 						key={index}
 						active={this.state.activeTrack === index}
-						baseVideo={video.baseVideo}
-						overlayVideos={video.overlayVideos}
-						activeOverlay={this.state.activeOverlay}
-						overlayPlaying={this.state.overlayPlaying}
-						handleOverlayEnded={this.handleOverlayEnded}
+						videos={videos}
+						activeVideo={this.state.activeVideo}
+						handleVideoEnded={this.handleVideoEnded}
 					/>
 				))}
 			</Fullscreen>

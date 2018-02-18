@@ -9,36 +9,21 @@ const Video = styled.video`
 	width: 100vw;
 `;
 
-const OverlayVideo = Video.extend`
-	z-index: 100;
-`;
-
 class Track extends Component {
 	render() {
 		//gör att du slipper skriva this.props
-		const {
-			active,
-			baseVideo,
-			overlayVideos,
-			activeOverlay,
-			overlayPlaying,
-			handleOverlayEnded,
-		} = this.props;
+		const { active, videos, activeVideo, handleVideoEnded } = this.props;
 
 		if (!active) return null;
 
 		return (
 			<div>
-				{/* mute när overlay visas, hur? */}
-				<Video src={baseVideo} autoPlay muted loop />
-
-				{overlayPlaying && (
-					<OverlayVideo
-						autoPlay
-						src={overlayVideos[activeOverlay]}
-						onEnded={handleOverlayEnded}
-					/>
-				)}
+				<Video
+					autoPlay
+					src={videos[activeVideo].src}
+					onEnded={handleVideoEnded}
+					loop={videos[activeVideo].loop ? 'loop' : undefined}
+				/>
 			</div>
 		);
 	}
@@ -46,11 +31,9 @@ class Track extends Component {
 
 Track.propTypes = {
 	active: PropTypes.bool.isRequired,
-	baseVideo: PropTypes.string.isRequired,
-	overlayVideos: PropTypes.array.isRequired,
-	activeOverlay: PropTypes.number.isRequired,
-	overlayPlaying: PropTypes.bool.isRequired,
-	handleOverlayEnded: PropTypes.func.isRequired,
+	videos: PropTypes.array.isRequired,
+	activeVideo: PropTypes.number.isRequired,
+	handleVideoEnded: PropTypes.func.isRequired,
 };
 
 export default Track;
