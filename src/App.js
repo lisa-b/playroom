@@ -86,18 +86,19 @@ class App extends Component {
 
 	nextVideo = () =>
 		this.setState(state => ({
-			activeVideo: ++state.activeVideo % tracks[state.activeTrack].length,
+			activeVideo: ++state.activeVideo % tracks[state.activeTrack].videos.length,
 		}));
 
 	render() {
 		return (
 			<Fullscreen enabled={this.state.isFull} onChange={isFull => this.setState({ isFull })}>
 				{/*create track components for each video-enviroments*/}
-				{tracks.map((videos, index) => (
+				{tracks.map((track, index) => (
 					<Track
 						key={index}
 						active={this.state.activeTrack === index}
-						videos={videos}
+						videos={track.videos}
+						poster={track.poster}
 						activeVideo={this.state.activeVideo}
 						handleVideoEnded={this.handleVideoEnded}
 					/>
