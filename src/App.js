@@ -20,22 +20,19 @@ import scenBild from './videos/scen/scenBild.png';
 
 //structure of videos
 const tracks = [
-	[
-		{ src: MartinBakgrund, loop: true },
-		{ src: MartinGris, loop: false },
-		{ src: MartinBakgrund, loop: true },
-		{ src: MartinTraktor, loop: false },
-	],
-	[
-		{ src: theScen, loop: true },
-		{ src: scenDance11, loop: false },
-		{ src: scenDance12, loop: true },
-		{ src: scenDance13, loop: false },
-		{ src: theScen, loop: true },
-		{ src: scenPlay11, loop: false },
-		{ src: scenPlay12, loop: true },
-		{ src: scenPlay13, loop: false },
-	],
+	{
+		poster: scenBild,
+		videos: [
+			{ src: theScen, loop: true },
+			{ src: scenDance11, loop: false },
+			{ src: scenDance12, loop: true },
+			{ src: scenDance13, loop: false },
+			{ src: theScen, loop: true },
+			{ src: scenPlay11, loop: false },
+			{ src: scenPlay12, loop: true },
+			{ src: scenPlay13, loop: false },
+		],
+	},
 ];
 
 class App extends Component {
