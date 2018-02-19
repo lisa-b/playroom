@@ -16,6 +16,7 @@ import scenDance13 from './videos/scen/scen-dance1_3.mp4';
 import scenPlay11 from './videos/scen/scen-play1_1.mp4';
 import scenPlay12 from './videos/scen/scen-play1_2.mp4';
 import scenPlay13 from './videos/scen/scen-play1_3.mp4';
+import scenBild from './videos/scen/scenBild.png';
 
 //structure of videos
 const tracks = [
