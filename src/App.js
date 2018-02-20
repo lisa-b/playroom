@@ -76,7 +76,6 @@ const tracks = [
 			{ src: circus, loop: true },
 			{ src: circusDog, loop: false },
 			{ src: circusDogSitting, loop: true },
-			{ src: circus, loop: true },
 		],
 	},
 	{
@@ -86,16 +85,11 @@ const tracks = [
 			{ src: DragonArriving, loop: false },
 			{ src: DragonFire, loop: true },
 			{ src: DragonFireEnding, loop: false },
-			{ src: dragon, loop: true },
 		],
 	},
 	{
 		poster: searchingBild,
-		videos: [
-			{ src: SearchingBase, loop: true },
-			{ src: Searching, loop: true },
-			{ src: SearchingBase, loop: true },
-		],
+		videos: [{ src: SearchingBase, loop: true }, { src: Searching, loop: true }],
 	},
 	{
 		poster: spaceBild,
@@ -104,7 +98,6 @@ const tracks = [
 			{ src: SpaceRocketArriving, loop: false },
 			{ src: SpaceRocketStanding, loop: true },
 			{ src: SpaceRocketLeaving, loop: false },
-			{ src: Space, loop: true },
 		],
 	},
 	{
@@ -114,7 +107,6 @@ const tracks = [
 			{ src: DinoArriving, loop: false },
 			{ src: DinoStanding, loop: true },
 			{ src: DinoLeaving, loop: false },
-			{ src: dinos, loop: true },
 		],
 	},
 	{
