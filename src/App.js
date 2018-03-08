@@ -187,7 +187,6 @@ class App extends Component {
 						key={index}
 						active={this.state.activeTrack === index}
 						videos={track.videos}
-						poster={track.poster}
 						activeVideo={this.state.activeVideo}
 						handleVideoEnded={this.handleVideoEnded}
 					/>

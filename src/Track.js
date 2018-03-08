@@ -16,14 +16,14 @@ const Video = styled.video`
 class Track extends Component {
 	render() {
 		//gör att du slipper skriva this.props
-		const { active, videos, activeVideo, handleVideoEnded, poster } = this.props;
+		const { active, videos, activeVideo, handleVideoEnded } = this.props;
 
 		if (!active) return null;
 
 		return (
 			<Container>
 				<Video
-					poster={poster}
+					poster={videos[activeVideo].poster}
 					autoPlay
 					src={videos[activeVideo].src}
 					onEnded={handleVideoEnded}
