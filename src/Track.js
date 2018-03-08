@@ -37,7 +37,6 @@ class Track extends Component {
 Track.propTypes = {
 	active: PropTypes.bool.isRequired,
 	videos: PropTypes.array.isRequired,
-	poster: PropTypes.string.isRequired,
 	activeVideo: PropTypes.number.isRequired,
 	handleVideoEnded: PropTypes.func.isRequired,
 };
