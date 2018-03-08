@@ -164,7 +164,17 @@ class App extends Component {
 				activeVideo: 0,
 			}));
 		} else if (event.key === 's') {
-			this.nextVideo();
+			this.setState(state => {
+				let newTrack = state.activeTrack - 1;
+				if (newTrack < 0) {
+					newTrack = tracks.length - 1;
+				}
+
+				return {
+					activeTrack: newTrack,
+					activeVideo: tracks[newTrack].videos.length - 1,
+				};
+			});
 		} else if (event.key === 'f') {
 			this.goFull();
 		}
