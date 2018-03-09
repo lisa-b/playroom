@@ -36,16 +36,22 @@ const tracks = [
 			{ src: fairytaleFade, loop: false, poster: portalImage },
 			{ src: fairytale, loop: true, poster: fairytaleImage },
 		],
+	},
+	{
 		videos: [
 			{ src: pschy1, loop: false, poster: portalImage },
 			{ src: desertFade, loop: false, poster: portalImage },
 			{ src: desertVideo, loop: true, poster: desertImage },
 		],
+	},
+	{
 		videos: [
 			{ src: pschy2, loop: false, poster: portalImage },
 			{ src: spaceFade, loop: false, poster: portalImage },
 			{ src: space, loop: true, poster: spaceImage },
 		],
+	},
+	{
 		videos: [
 			{ src: pscy, loop: false, poster: portalImage },
 			{ src: cafeFade, loop: false, poster: portalImage },
