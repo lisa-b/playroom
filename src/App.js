@@ -5,125 +5,52 @@ import { injectGlobal } from 'styled-components';
 import Track from './Track';
 
 // import films
-import MartinBakgrund from './videos/MartinBakgrund.mp4';
-import MartinGris from './videos/MartinGris.mp4';
-import MartinTraktor from './videos/MartinTraktor.mp4';
 
-import theScen from './videos/scen/the-scen.mp4';
-import scenDance11 from './videos/scen/scen-dance1_1.mp4';
-import scenDance12 from './videos/scen/scen-dance1_2.mp4';
-import scenDance13 from './videos/scen/scen-dance1_3.mp4';
-import scenPlay11 from './videos/scen/scen-play1_1.mp4';
-import scenPlay12 from './videos/scen/scen-play1_2.mp4';
-import scenPlay13 from './videos/scen/scen-play1_3.mp4';
-import scenBild from './videos/scen/scenBild.png';
+import cafe from './videos/cafe.mp4';
+import cafeFade from './videos/cafeFade.mp4';
+import cafeImage from './videos/cafeImage.png';
 
-import Brandstation from './videos/Brandstation.mp4';
-import BrandstationLjud from './videos/BrandstationLjud.mp4';
+import desertVideo from './videos/desertVideo.mp4';
+import desertFade from './videos/desertFade.mp4';
+import desertImage from './videos/desertImage.png';
 
-import Space from './videos/Space.mp4';
-import SpaceRocketArriving from './videos/SpaceRocketArriving.mp4';
-import SpaceRocketStanding from './videos/SpaceRocketStanding.mp4';
-import SpaceRocketLeaving from './videos/SpaceRocketLeaving.mp4';
-import spaceBild from './videos/spaceBild.png';
+import fairytale from './videos/fairytale.mp4';
+import fairytaleFade from './videos/fairytaleFade.mp4';
+import fairytaleImage from './videos/fairytaleImage.png';
 
-import Searching from './videos/Searching.mp4';
-import SearchingBase from './videos/SearchingBase.mp4';
-import searchingBild from './videos/searchingBild.png';
+import space from './videos/space.mp4';
+import spaceFade from './videos/spaceFade.mp4';
+import spaceImage from './videos/spaceImage.png';
 
-import Road1 from './videos/Road1.mp4';
-import Road2 from './videos/Road2.mp4';
+import pscy from './videos/pscy.mp4';
+import pschy1 from './videos/pschy1.mp4';
+import pschy2 from './videos/pschy2.mp4';
 
-import dinos from './videos/dinos.mp4';
-import DinoArriving from './videos/DinoArriving.mp4';
-import DinoStanding from './videos/DinoStanding.mp4';
-import DinoLeaving from './videos/DinoLeaving.mp4';
-import dinosBild from './videos/dinosBild.png';
-
-import dragon from './videos/dragon.mp4';
-import DragonArriving from './videos/DragonArriving.mp4';
-import DragonFire from './videos/DragonFire.mp4';
-import DragonFireEnding from './videos/DragonFireEnding.mp4';
-import dragonBild from './videos/dragonBild.png';
-
-import hastedit from './videos/hastedit.mp4';
-import honsedit from './videos/honsedit.mp4';
-import hundaredit from './videos/hundaredit.mp4';
-
-import circus from './videos/circus.mp4';
-import circusDog from './videos/circusDog.mp4';
-import circusDogSitting from './videos/circusDogSitting.mp4';
-import circusBild from './videos/circusBild.png';
+import portalImage from './videos/portalImage.png';
 
 //structure of videos
 const tracks = [
 	{
-		poster: scenBild,
 		videos: [
-			{ src: theScen, loop: true },
-			{ src: scenDance11, loop: false },
-			{ src: scenDance12, loop: true },
-			{ src: scenDance13, loop: false },
-			{ src: theScen, loop: true },
-			{ src: scenPlay11, loop: false },
-			{ src: scenPlay12, loop: true },
-			{ src: scenPlay13, loop: false },
+			{ src: pscy, loop: false, poster: portalImage },
+			{ src: fairytaleFade, loop: false, poster: portalImage },
+			{ src: fairytale, loop: true, poster: fairytaleImage },
 		],
-	},
-	{
-		poster: circusBild,
 		videos: [
-			{ src: circus, loop: true },
-			{ src: circusDog, loop: false },
-			{ src: circusDogSitting, loop: true },
+			{ src: pschy1, loop: false, poster: portalImage },
+			{ src: desertFade, loop: false, poster: portalImage },
+			{ src: desertVideo, loop: true, poster: desertImage },
 		],
-	},
-	{
-		poster: dragonBild,
 		videos: [
-			{ src: dragon, loop: true },
-			{ src: DragonArriving, loop: false },
-			{ src: DragonFire, loop: true },
-			{ src: DragonFireEnding, loop: false },
+			{ src: pschy2, loop: false, poster: portalImage },
+			{ src: spaceFade, loop: false, poster: portalImage },
+			{ src: space, loop: true, poster: spaceImage },
 		],
-	},
-	{
-		poster: searchingBild,
-		videos: [{ src: SearchingBase, loop: true }, { src: Searching, loop: true }],
-	},
-	{
-		poster: spaceBild,
 		videos: [
-			{ src: Space, loop: true },
-			{ src: SpaceRocketArriving, loop: false },
-			{ src: SpaceRocketStanding, loop: true },
-			{ src: SpaceRocketLeaving, loop: false },
+			{ src: pscy, loop: false, poster: portalImage },
+			{ src: cafeFade, loop: false, poster: portalImage },
+			{ src: cafe, loop: true, poster: cafeImage },
 		],
-	},
-	{
-		poster: dinosBild,
-		videos: [
-			{ src: dinos, loop: true },
-			{ src: DinoArriving, loop: false },
-			{ src: DinoStanding, loop: true },
-			{ src: DinoLeaving, loop: false },
-		],
-	},
-	{
-		poster: '',
-		videos: [{ src: Brandstation, loop: true }, { src: BrandstationLjud, loop: true }],
-	},
-	{
-		poster: '',
-		videos: [
-			{ src: hastedit, loop: true },
-			{ src: honsedit, loop: true },
-			{ src: hundaredit, loop: true },
-		],
-	},
-	{
-		poster: '',
-		videos: [{ src: Road2, loop: true }, { src: Road1, loop: true }],
 	},
 ];
 
