@@ -7,19 +7,19 @@ import Track from './Track';
 // import films
 
 import cafe from './videos/cafe.mp4';
-import cafeFade from './videos/cafeFade.mp4';
+import cafeFadeNoSound from './videos/cafeFadeNoSound.mp4';
 import cafeImage from './videos/cafeImage.png';
 
 import desertVideo from './videos/desertVideo.mp4';
-import desertFade from './videos/desertFade.mp4';
+import desertFadeNoSound from './videos/desertFadeNoSound.mp4';
 import desertImage from './videos/desertImage.png';
 
 import fairytale from './videos/fairytale.mp4';
-import fairytaleFade from './videos/fairytaleFade.mp4';
+import fairytaleFadeNoSound from './videos/fairytaleFadeNoSound.mp4';
 import fairytaleImage from './videos/fairytaleImage.png';
 
 import space from './videos/space.mp4';
-import spaceFade from './videos/spaceFade.mp4';
+import spaceFadeNoSound from './videos/spaceFadeNoSound.mp4';
 import spaceImage from './videos/spaceImage.png';
 
 import pscy from './videos/pscy.mp4';
@@ -33,28 +33,28 @@ const tracks = [
 	{
 		videos: [
 			{ src: pscy, loop: false, poster: portalImage },
-			{ src: fairytaleFade, loop: false, poster: portalImage },
+			{ src: fairytaleFadeNoSound, loop: false, poster: portalImage },
 			{ src: fairytale, loop: true, poster: fairytaleImage },
 		],
 	},
 	{
 		videos: [
 			{ src: pschy1, loop: false, poster: portalImage },
-			{ src: desertFade, loop: false, poster: portalImage },
+			{ src: desertFadeNoSound, loop: false, poster: portalImage },
 			{ src: desertVideo, loop: true, poster: desertImage },
 		],
 	},
 	{
 		videos: [
 			{ src: pschy2, loop: false, poster: portalImage },
-			{ src: spaceFade, loop: false, poster: portalImage },
+			{ src: spaceFadeNoSound, loop: false, poster: portalImage },
 			{ src: space, loop: true, poster: spaceImage },
 		],
 	},
 	{
 		videos: [
 			{ src: pscy, loop: false, poster: portalImage },
-			{ src: cafeFade, loop: false, poster: portalImage },
+			{ src: cafeFadeNoSound, loop: false, poster: portalImage },
 			{ src: cafe, loop: true, poster: cafeImage },
 		],
 	},
